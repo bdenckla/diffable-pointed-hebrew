@@ -5,6 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Run on tiny sample input",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "tiny-sample-input.txt",
+                "tiny-sample-output.json"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
             "name": "Run on sample input",
             "type": "python",
             "request": "launch",
