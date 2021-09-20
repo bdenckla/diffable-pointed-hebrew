@@ -10,15 +10,22 @@ def main():
     parser.add_argument('output_filename')
     args = parser.parse_args()
     with open(args.input_filename, encoding='utf-8') as ifp:
-        olines = _make_lines_of_words(ifp)
-    with_tmp_openw(args.output_filename, lambda ofp: _dump(ofp, olines))
+        cpns = {}  # code point names
+        olines = _make_lines_of_words(cpns, ifp)
+    scpns = _sorted_cpns(cpns)
+    outstruc = dict(code_point_names=scpns, lines=olines)
+    with_tmp_openw(args.output_filename, lambda ofp: _dump(ofp, outstruc))
 
 
-def _make_lines_of_words(ifp):
+def _sorted_cpns(cpns):
+    return [(k,) + cpns[k] for k in sorted(cpns.keys())]
+
+
+def _make_lines_of_words(cpns, ifp):
     olines = []
     for iline in ifp:
-        iwords = iline.split(' ')
-        owords = list(map(comma_join_shortened_unicode_names, iwords))
+        iwords = iline.replace('\n', '').split(' ')
+        owords = [comma_join_shortened_unicode_names(cpns, w) for w in iwords]
         olines.append(owords)
     return olines
 
@@ -159,20 +166,32 @@ def _shorten(word1, word2):
     return _SHORTEN_DIC.get((word1, word2)) or word1 + ' ' + word2
 
 
-def shortened_unicode_name(char):
+def shortened_unicode_name(char, fullname):
     if nonhe := _HE_TO_NONHE_DIC.get(char):
         return nonhe
     if muns := _MISC_UNI_NAME_SHORTENINGS.get(char):
         return muns
-    fullname = unicodedata.name(char, str(ord(char)))
+    if not fullname:
+        return str(ord(char))
     whstrs = fullname.split()
     if len(whstrs) < 3:
-        return fullname
-    return _shorten(whstrs[0], whstrs[1]) + ' ' + ' '.join(whstrs[2:])
+        return None
+    if sd := _SHORTEN_DIC.get((whstrs[0], whstrs[1])):
+        return sd + ' ' + ' '.join(whstrs[2:])
+    return None
 
 
-def comma_join_shortened_unicode_names(pre_line):
-    return ','.join(map(shortened_unicode_name, pre_line))
+def _name_record(char):
+    fullname = unicodedata.name(char, None)
+    sname = shortened_unicode_name(char, fullname)
+    return ord(char), sname, fullname
+
+
+def comma_join_shortened_unicode_names(cpns, chars):
+    name_recs = list(map(_name_record, chars))
+    for nr in name_recs:
+        cpns[nr[0]] = nr[1:]
+    return ','.join(nr[1] or nr[2] for nr in name_recs)
 
 
 if __name__ == '__main__':
