@@ -8,7 +8,7 @@
             "name": "Run on tiny sample input",
             "type": "debugpy",
             "request": "launch",
-            "program": "${file}",
+            "program": "diffable-pointed-hebrew.py",
             "args": [
                 "tiny-sample-input.txt",
                 "tiny-sample-output.json"
@@ -19,7 +19,7 @@
             "name": "Run on sample input",
             "type": "debugpy",
             "request": "launch",
-            "program": "${file}",
+            "program": "diffable-pointed-hebrew.py",
             "args": [
                 "sample-input.txt",
                 "sample-output.json"

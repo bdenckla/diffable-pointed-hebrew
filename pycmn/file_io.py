@@ -49,7 +49,8 @@ def json_dump_to_file_path(dumpable, out_path: str):
 
 
 def _openw(out_path: str, **kwargs):
-    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    dname = os.path.dirname(out_path) or './'
+    os.makedirs(dname, exist_ok=True)
     return open(out_path, "w", encoding="utf-8", **kwargs)
 
 
