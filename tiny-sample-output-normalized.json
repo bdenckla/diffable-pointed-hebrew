@@ -1,0 +1,111 @@
+{
+  "code_point_names": [
+    [
+      1425,
+      "(atn)",
+      "HEBREW ACCENT ETNAHTA"
+    ],
+    [
+      1430,
+      "(tip)",
+      "HEBREW ACCENT TIPEHA"
+    ],
+    [
+      1443,
+      "(mun)",
+      "HEBREW ACCENT MUNAH"
+    ],
+    [
+      1456,
+      ":",
+      "HEBREW POINT SHEVA"
+    ],
+    [
+      1457,
+      ":∵",
+      "HEBREW POINT HATAF SEGOL"
+    ],
+    [
+      1460,
+      "i",
+      "HEBREW POINT HIRIQ"
+    ],
+    [
+      1461,
+      "‥",
+      "HEBREW POINT TSERE"
+    ],
+    [
+      1464,
+      "a",
+      "HEBREW POINT QAMATS"
+    ],
+    [
+      1465,
+      "o",
+      "HEBREW POINT HOLAM"
+    ],
+    [
+      1468,
+      "·",
+      "HEBREW POINT DAGESH OR MAPIQ"
+    ],
+    [
+      1473,
+      "·sh",
+      "HEBREW POINT SHIN DOT"
+    ],
+    [
+      1488,
+      "α",
+      "HEBREW LETTER ALEF"
+    ],
+    [
+      1489,
+      "v",
+      "HEBREW LETTER BET"
+    ],
+    [
+      1492,
+      "h",
+      "HEBREW LETTER HE"
+    ],
+    [
+      1497,
+      "y",
+      "HEBREW LETTER YOD"
+    ],
+    [
+      1500,
+      "l",
+      "HEBREW LETTER LAMED"
+    ],
+    [
+      1501,
+      "m.",
+      "HEBREW LETTER FINAL MEM"
+    ],
+    [
+      1512,
+      "r",
+      "HEBREW LETTER RESH"
+    ],
+    [
+      1513,
+      "$",
+      "HEBREW LETTER SHIN"
+    ],
+    [
+      1514,
+      "τ",
+      "HEBREW LETTER TAV"
+    ]
+  ],
+  "lines": [
+    [
+      "v,:,·,r,‥,α,$,i,·sh,(tip),y,τ",
+      "v,a,·,r,a,(mun),α",
+      "α,:∵,l,o,h,i,(atn),y,m."
+    ]
+  ]
+}

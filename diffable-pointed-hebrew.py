@@ -6,11 +6,12 @@ import pycmn.file_io as file_io
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument("--normalize", action="store_true")
     parser.add_argument("input_filename")
     parser.add_argument("output_filename")
     args = parser.parse_args()
     with open(args.input_filename, encoding="utf-8") as ifp:
-        cpns, olines = _make_lines_of_words(ifp)
+        cpns, olines = _make_lines_of_words(args.normalize, ifp)
     scpns = _sorted_cpns(cpns)
     outstruc = dict(code_point_names=scpns, lines=olines)
     file_io.json_dump_to_file_path(outstruc, args.output_filename)
@@ -20,10 +21,12 @@ def _sorted_cpns(cpns):
     return [(k,) + cpns[k] for k in sorted(cpns.keys())]
 
 
-def _make_lines_of_words(ifp):
+def _make_lines_of_words(normalize, ifp):
     cpns = {}  # code point names
     olines = []
     for iline in ifp:
+        if normalize:
+            iline = unicodedata.normalize("NFC", iline)
         iwords = iline.replace("\n", "").split(" ")
         owords = [_comma_join_shortened_unicode_names(cpns, w) for w in iwords]
         olines.append(owords)

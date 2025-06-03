@@ -16,6 +16,18 @@
             "console": "integratedTerminal"
         },
         {
+            "name": "Run on normalized tiny sample input",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "diffable-pointed-hebrew.py",
+            "args": [
+                "--normalize",
+                "tiny-sample-input.txt",
+                "tiny-sample-output-normalized.json"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
             "name": "Run on sample input",
             "type": "debugpy",
             "request": "launch",
