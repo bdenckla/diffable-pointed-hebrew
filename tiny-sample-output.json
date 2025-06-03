@@ -2,17 +2,17 @@
 "code_point_names": [
 [
 1425,
-"⅄",
+"(atn)",
 "HEBREW ACCENT ETNAHTA"
 ],
 [
 1430,
-"[ti]",
+"(tip)",
 "HEBREW ACCENT TIPEHA"
 ],
 [
 1443,
-"⅃",
+"(mun)",
 "HEBREW ACCENT MUNAH"
 ],
 [
@@ -103,9 +103,9 @@
 ],
 "lines": [
 [
-"v,·,:,r,‥,α,$,·sh,i,[ti],y,τ",
-"v,·,a,r,a,⅃,α",
-"α,:∵,l,o,h,i,⅄,y,m."
+"v,·,:,r,‥,α,$,·sh,i,(tip),y,τ",
+"v,·,a,r,a,(mun),α",
+"α,:∵,l,o,h,i,(atn),y,m."
 ]
 ]
 }
