@@ -1,7 +1,7 @@
 import argparse
 import unicodedata
-import pycmn.uni_heb as uni_heb
-import pycmn.file_io as file_io
+import mb_cmn.uni_heb as uni_heb
+import mb_cmn.file_io as file_io
 
 
 def main():

@@ -9,11 +9,11 @@ This module exports:
 """
 
 import unicodedata
-import pycmn.hebrew_letters as hl
-import pycmn.hebrew_points as hpo
-import pycmn.hebrew_punctuation as hpu
-import pycmn.hebrew_accents as ha
-import pycmn.str_defs as sd
+import mb_cmn.hebrew_letters as hl
+import mb_cmn.hebrew_points as hpo
+import mb_cmn.hebrew_punctuation as hpu
+import mb_cmn.hebrew_accents as ha
+import mb_cmn.str_defs as sd
 
 
 def shunna(string):
