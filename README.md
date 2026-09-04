@@ -8,5 +8,5 @@ assignments are now under
 there.
 
 This repository is a dated breadcrumb for the former product's history. It has
-no Pages content. Ben decides whether the source repository is archived after
-this breadcrumb is verified.
+no Pages content. Ben archived the source repository on 2026-09-04 after
+verifying this breadcrumb.
